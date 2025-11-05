@@ -1,0 +1,327 @@
+/* ======= BASE GENERAL ======= */
+:root{
+  --azul-oscuro:#001b4e;
+  --azul-claro:#4961fb;
+  --texto:#081a3a;
+  --texto-sec:#32436b;
+  --card-w: 520px;  /* ancho fijo de la tarjeta */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ======= SECCION con fondo ======= */
+.tst{
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(40px,6vw,90px) 16px;
+  min-height: 500px;
+  background: none;
+  overflow: visible;
+}
+.tst::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -24px;  
+  width: 100vw;                     
+  height: min(68vh, 640px);  
+  background: url("assets/fondoCa2.jpg") center bottom / cover no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+
+/* ======= CARRUSEL ======= */
+.tst-viewport{position:relative;overflow:hidden;margin-top:-6px}
+.tst-track{
+  display:flex;
+  align-items:stretch;
+  gap:36px;                            /* separacion lateral */
+  transition:transform .45s ease-in-out;
+  will-change:transform;
+}
+
+/* ======= TARJETA ======= */
+.tst-card{
+  flex: 0 0 var(--card-w);
+  width: var(--card-w);
+  max-width: var(--card-w);
+
+  background-image: url("assets/FondoCard.png");
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-size: 100% 100%;
+
+  aspect-ratio: 1194 / 754;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  transition: transform .28s ease, opacity .28s ease;
+  --scale: calc(var(--card-w) / 520);
+
+  padding-top: 0;
+}
+
+.tst-card{ opacity:.45; transform:scale(.9); }
+
+/* Activa: tamano completo y opacidad 1 */
+.tst-card.is-active{ opacity:1; transform:scale(1); }
+
+
+/* ======= LAYOUT INTERNO ======= */
+
+.tst-top{
+  padding: clamp(18px, 2.6vw, 26px) clamp(22px, 3vw, 30px) clamp(10px, 1.2vw, 14px);
+  display: grid;
+  grid-template-columns: clamp(60px, 6vw, 72px) 1fr clamp(12px, 1.2vw, 16px);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "avatar name  ."
+    "avatar stars .";
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* Avatar fijo a la izquierda */
+.tst-avatar{
+  grid-area: avatar;
+  width: clamp(56px, 6vw, 72px);
+  height: clamp(56px, 6vw, 72px);
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: start;
+  margin-left: 60px;
+}
+
+/* Nombre centrado en la columna central (no span) */
+.tst-name{
+  grid-area: name;
+  justify-self: center;
+  font-family: 'Francy', sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.06;
+  margin: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #DCEBFF 55%, #A4C6FF 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 1px 0 rgba(255,255,255,.15);
+  letter-spacing: 0.04em;
+}
+
+/* Estrellas centradas justo debajo del nombre */
+.tst-stars{
+  grid-area: stars;
+  justify-self: center;
+  height: clamp(20px, 2.3vw, 26px);
+  width: auto;
+  margin-top: clamp(2px, .5vw, 6px);
+  transform: translateY(-2px);
+  margin-top: -12px;
+}
+
+/* ======= CONTENIDO ======= */
+.tst-content{
+  height: 56%;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding: calc(16px * var(--scale)) calc(28px * var(--scale)) calc(22px * var(--scale));
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+	
+.tst-title{
+  font-size: 25px;
+  line-height: 1.22;
+  margin: calc(8px * var(--scale)) 0 calc(10px * var(--scale));
+  background: linear-gradient(180deg,var(--azul-oscuro) 0%,var(--azul-claro) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.tst-text {
+  text-align:center;
+  color:#0e2e78;
+  font-size: 22px;
+  line-height:1.42;
+  max-width:430px;
+  margin:0 auto;
+}
+
+/* ======= FLECHAS ======= */
+
+
+/* FLECHAS — LATERALES y centradas verticalmente (DESKTOP/TABLET) */
+.tst-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);   /* centradas verticalmente */
+  width: clamp(56px, 5vw, 70px);
+  height: clamp(56px, 5vw, 70px);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;                     /* por encima del pseudo-fondo */
+  padding: 0;
+  transition: transform .18s ease;
+}
+.tst-prev{ left: -4.5vw; }
+.tst-next{ right: -4.5vw; }
+
+.tst-arrow:hover{ transform: translateY(-50%) scale(1.05); }
+.tst-arrow img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+
+
+/* ======= ANIMACION ENTRADA ======= */
+@keyframes fadeUp{from{opacity:1;transform:translateY(0px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px)}
+.reveal.in{animation:fadeUp .7s ease-out forwards}
+
+/* ==== DESVANECIDO LATERAL DEL CARRUSEL ==== */
+.tst-viewport {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,1) 10%,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,1) 10%,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0) 100%);
+}
+
+	/* ===== Tablet (<=1024px) ===== */
+	@media (max-width:1024px){
+	  .tst-card{ --card-w: 440px; }
+	  .tst-track{ gap: 24px; }
+	  .tst::before{
+		bottom: clamp(50px, 7vw, 130px);
+		height: min(60vh, 540px);
+	  }
+	}
+
+/* ===== Movil (<=768px): mantiene estructura, solo escala ===== */
+@media (max-width:768px){
+  .tst{
+    padding: 24px 0 40px;
+    min-height: 520px;
+  }
+
+  /* Fondo sigue full-width */
+  .tst::before{
+    height: min(58vh, 480px);
+    background-size: cover;
+  }
+
+  /* Una tarjeta por vista */
+.tst-track{ gap: 0; }   
+.tst-card{
+  --card-w: 92vw;      
+  flex: 0 0 var(--card-w);
+  max-width: var(--card-w);
+}
+  .tst-top{
+    padding: 12px 18px 8px;
+    margin-bottom: 8px;
+  }
+
+  .tst-avatar{
+    width: 56px;
+    height: 56px;
+    margin-left: 40px;       /* mantiene el mismo layout relativo */
+  }
+
+  .tst-name{
+    font-size: 22px;
+  }
+
+  .tst-stars{
+    height: 18px;
+    margin-top: -10px;
+  }
+
+  .tst-content{
+    padding: 12px 20px 18px;
+  }
+
+  .tst-title{
+    font-size: 16px;
+    margin: 6px 0 8px;
+  }
+
+  .tst-text{
+    font-size: 15.5px;
+    line-height: 1.4;
+  }
+
+/* ======= FLECHAS (siempre pareja centrada abajo) ======= */
+.tst-arrow{
+  position:absolute;
+  bottom:clamp(18px, 3.6vw, 40px); /* igual que la referencia */
+  left:50%;
+  width:clamp(56px, 5vw, 72px);
+  height:clamp(56px, 5vw, 72px);
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  z-index:4;                       /* sobre el fade */
+  padding:0;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  transform:none;                  /* base sin translate para evitar “saltos” */
+}
+.tst-arrow img{width:100%;height:100%;object-fit:contain;display:block}
+
+/* Distribucion respecto al centro: izquierda y derecha */
+.tst-prev{ transform:translateX(-120%); }
+.tst-next{ transform:translateX(  20%); }
+
+@media (hover:hover){
+  .tst-arrow:hover{ transform:translateX(var(--tx,0)) scale(1.05); }
+  .tst-prev{ --tx:-120%; }
+  .tst-next{ --tx:  20%; }
+}
+}
+@media (max-width:768px){
+	  .tst-arrow:active{ transform:translateX(var(--tx,0)) scale(.98); }
+	
+	/* Coloca ambas flechas respecto al centro */
+	.tst-prev {
+	  left: 50%;
+	  right: auto;
+	  transform: translateX(-120%);
+	}
+
+	.tst-next {
+	  left: 50%;
+	  right: auto;
+	  transform: translateX(20%);
+	}
+
+	/* Mantener posicion en movil, sin saltos */
+	.tst-prev:hover,
+	.tst-prev:active {
+	  transform: translateX(-120%) scale(.98);
+	}
+
+	.tst-next:hover,
+	.tst-next:active {
+	  transform: translateX(20%) scale(.98);
+	}
+  .tst::before{
+    bottom: clamp(150px, 12vw, 160px);
+    height: min(62vh, 520px);
+  }
+
+}

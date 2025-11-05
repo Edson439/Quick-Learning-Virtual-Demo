@@ -1,0 +1,1161 @@
+/* =================== VARIABLES =================== */
+:root{
+  /* Banner morado */
+  --banner-bg-start: #4b32ff;
+  --banner-bg-end:   #7a3cff;
+  --banner-text:     #ffffff;
+  --btn-bg:          #ffffff;
+  --btn-text:        #4b32ff;
+
+  /* Navbar */
+  --nav-bg:          #0f1b61;   /* azul muy oscuro del menú */
+  --nav-text:        #ffffff;
+  --nav-muted:       #cdd6f4;
+  --brand-divider:   rgba(255,255,255,0.35);
+
+  /* Botones navbar */
+  --primary-grad-a:  #7a3cff;
+  --primary-grad-b:  #9a62ff;
+  --primary-shadow:  rgba(122,60,255,0.35);
+  --promo-height: 0px;
+  --push-despues-del-hero: 260px;
+  /* Foco vertical del video: 50% = centro. Sube laptops aumentando este % */
+  --hero-video-focus-y: 100%;
+  /* Zoom del video de fondo (1 = sin zoom) */
+  --hero-video-scale: 1.06
+}
+
+body{
+  margin: 0;
+  font-family: 'Nobel Uno', sans-serif;
+  color: #111;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Francy', 'Nobel Uno', sans-serif;
+  font-weight: 700;
+}
+
+/* =================== BANNER =================== */
+.promo-banner{
+  background: linear-gradient(90deg, var(--banner-bg-start), var(--banner-bg-end));
+  color: var(--banner-text);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.promo-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.promo-text{
+  margin: 0;
+  flex: 1;
+  line-height: 1.3;
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+.promo-actions{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.promo-btn{
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: #063490;           
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.promo-btn:hover{ background: rgba(255,255,255,0.85); }
+.promo-close{
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.promo-close:hover{ background: rgba(255,255,255,0.15); }
+
+.promo-btn:focus-visible,
+.promo-close:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* =================== NAVBAR =================== */
+.site-header{
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: var(--promo-height); /* se queda fijo debajo del banner */
+  z-index: 998; 
+}
+
+.nav-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+}
+
+/* Marca (logo) */
+.brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo{
+  display: block;
+  height: 36px;
+  width: auto;
+  margin: 0 0 10px 0;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+}
+/* Links */
+.main-nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 28px;
+}
+.main-nav a{
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.95;
+}
+.main-nav a:hover{
+  opacity: 1;
+  text-underline-offset: 4px;
+  color: #4b32ff;
+}
+
+/* Botones derecha */
+.nav-actions{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.btn{
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+
+
+
+
+
+/* ===== BOTONES CON IMAGEN ===== */
+
+/* Acceso Alumnos */
+.btn-outline {
+  background-image: url("assets/Acceso.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  text-indent: -9999px; /* oculta el texto */
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.btn-outline:hover {
+  background-image: url("assets/Acceso_Hover.png");
+}
+
+/* Contáctanos */
+.btn-primary {
+  background-image: url("assets/Contacta.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  text-indent: -9999px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.btn-primary:hover {
+  background-image: url("assets/Contacta_Hover.png");
+}
+
+  .btn-outline,
+  .btn-primary {
+    width: 150px;  /* o 130px si usas el mini */
+    height: 33px;
+	max-height: 150px;
+  }
+.menu-toggle{
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* se mostrará solo en responsive */
+  padding: 8px;
+}
+.menu-toggle svg{
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.5;
+}
+
+/* Menú móvil (oculto por defecto) */
+.mobile-nav[hidden] { display: none; }
+
+.mobile-nav {
+  background: var(--nav-bg);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.mobile-nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.mobile-nav a{
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 10px 6px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.mobile-nav a:hover{
+  background: rgba(255,255,255,0.06);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+
+
+
+
+
+
+
+/* ====== HERO (fondo con imagen) ====== */
+/* HERO: contenedor base */
+.hero{
+  position: relative;
+  color: #fff;
+  padding: clamp(140px, 6vw, 90px) 16px;
+  text-align: center;
+  overflow: hidden; /* oculta desbordes del video */
+  padding-top: clamp(30px, 4vw, 50px); /* Menos espacio arriba */
+  padding-bottom: clamp(60px, 10vw, 150px); /* Más espacio abajo para mantener altura general */
+  padding-left: 16px; /* Mantener padding lateral */
+  padding-right: 16px; /* Mantener padding lateral */
+  min-height: clamp(640px, 80vh, 1100px);
+}
+
+
+/* Capa de video a pantalla completa */
+.hero-bg{
+  position: absolute;
+  inset: 0;        /* top/right/bottom/left: 0 */
+  z-index: 0;     /* por detrás del contenido */
+	margin: -110px auto 20px;
+  }
+
+.hero-bg-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* mueve el encuadre vertical (sube laptops aumentando el %) */
+  object-position: 50% var(--hero-video-focus-y);
+  /* por si necesitas “acercar” un poco las laptops */
+  transform: scale(var(--hero-video-scale));
+}
+
+/* Overlay para legibilidad del texto (gradiente suave) */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg,
+              rgba(0,0,0,.25) 0%,
+              rgba(0,0,0,.35) 40%,
+              rgba(0,0,0,.45) 100%);
+}
+/* Asegura que el contenido quede por encima */
+.hero-inner{
+  position: relative;
+}
+
+
+.hero-title{
+  font-size: clamp(30px, 4vw, 74px);
+  line-height: 1.05;
+  margin: -50px auto 20px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  max-width: 700px;
+}
+.subrayado {
+  position: relative;
+  display: inline-block;
+  padding: .2em .25em .05em .25em;
+  border-radius: 0;
+  /* el trazo se hace más grueso según el tamaño del texto */
+  box-shadow: 0 0 0 clamp(1.5px, 0.25vw, 3px) rgba(255,255,255,1) inset;
+}
+/* ===== PUNTERO (distancia equilibrada) ===== */
+.subrayado .puntero {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  width: clamp(10px, 1.3vw, 20px);
+  height: clamp(10px, 1.3vw, 20px);
+  right: calc(-1 * clamp(20px, 2.3vw, 30px)); /* distancia media */
+  background: url("assets/puntero.png") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Cuadritos decorativos SOLO en el texto, no en el puntero */
+.subrayado::before,
+.subrayado::after,
+.subrayado .subrayado-text::before,
+.subrayado .subrayado-text::after {
+  content: "";
+  position: absolute;
+  width: clamp(6px, 0.7vw, 10px);
+  height: clamp(6px, 0.7vw, 10px);
+  background: url("assets/cuadro.png") center/contain no-repeat;
+}
+
+/* Esquinas superiores */
+.subrayado::before {
+  top: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+  left: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+}
+.subrayado::after {
+  top: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+  right: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+}
+
+/* Esquinas inferiores — ahora sobre el span del texto */
+.subrayado .subrayado-text::before {
+  bottom: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+  left: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+}
+.subrayado .subrayado-text::after {
+  bottom: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+  right: calc(-0.6 * clamp(3px, 0.4vw, 6px));
+}
+
+/* Blindaje: asegura que el puntero NO tenga pseudo-elementos */
+.subrayado .puntero::before,
+.subrayado .puntero::after { content: none !important; }
+
+/* (opcional) pon el puntero encima de todo */
+.subrayado .puntero { z-index: 3; }
+
+
+.hero-paragraph {
+  margin: 10px auto 20px;
+  max-width: 720px;
+  color: #e6e9ff;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+
+/* Botonera */
+.hero-buttons{
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0 28px;
+}
+
+/* Botones con imagen (como los del menú) */
+.img-btn{
+  text-indent: -9999px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0;
+  width: 220px;   /* ajusta si tus PNG miden distinto */
+  height: 60px;
+}
+
+/* Contacto */
+.btn-contacto{
+  background-image: url("assets/Contacta2.png");
+}
+.btn-contacto:hover{
+  background-image: url("assets/Contacta2_Hover.png");
+}
+
+/* Comienza */
+.btn-comienza{
+  background-image: url("assets/Comienza.png");
+}
+.btn-comienza:hover{
+  background-image: url("assets/Comienza_Hover.png");
+}
+/* Comienza */
+.btn-comienza{
+  background-image: url("assets/Comienza2.png");
+}
+.btn-comienza:hover{
+  background-image: url("assets/Comienza2_Hover.png");
+}
+
+/* Video enmarcado */
+.hero-video{
+  display: flex;
+  justify-content: center;
+}
+/* Marco con tamaño fijo (igual que tenías) */
+.video-frame{
+  width: 823px;
+  height: 307px;
+  border-radius: 16px;
+  background: transparent;
+  overflow: hidden;             /* recorta el “zoom” */
+  position: relative;
+  --vf-zoom: .43;              /* 1 = sin zoom. Sube a 1.2, 1.3, etc. */
+  --vf-shift-x: 0%;             /* mueve foco en X: -10% a 10% aprox */
+  --vf-shift-y: -11%;             /* mueve foco en Y: -10% a 10% aprox */
+}
+
+/* Video “relleno” que podemos escalar y reposicionar */
+.video-fill{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;            /* llena sin deformar */
+  /* centra y aplica zoom + desplazamiento fino */
+  transform:
+    translate(calc(-50% + var(--vf-shift-x)), calc(-48% + var(--vf-shift-y)))
+    scale(var(--vf-zoom));
+}
+
+@media (max-width: 940px){
+  .video-frame{
+    width: min(823px, 92vw);
+    height: calc((307 / 823) * min(823px, 92vw));
+  }
+}
+
+
+
+
+
+
+/* ===== SECCIÓN MÉTODO QUICK LEARNING ===== */
+#metodo { scroll-margin-top: 100px; }
+.metodo {
+  background: transparent !important;
+  padding: clamp(40px, 29vw, 130px) 16px;
+  text-align: center;
+}
+
+/* Encabezado general */
+.metodo-header {
+  max-width: 1200px;
+  margin: 0 auto clamp(50px, 6vw, 80px);
+  text-align: center;
+}
+
+/* ===== TÍTULO CON DEGRADADO ===== */
+.metodo-header h2 {
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, #3557ff 0%, #001b4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 0px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+
+
+/* ===== PÁRRAFO AZUL ===== */
+.metodo-header p {
+  font-family: 'Nobel Uno', sans-serif;
+  font-size: 20px;
+  color: #073d99;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 130px;
+}
+
+
+/* ===== GRID: 2 por renglón ===== */
+.metodo-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 0.9fr)); /* reduce escala horizontal */
+  column-gap: 94px;  /* menos separación lateral */
+  row-gap: 48px;     /* menos espacio vertical */
+  justify-content: center;
+  transform: scale(0.92);  /* reduce todo ligeramente */
+  transform-origin: top center; /* mantiene centrado */
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .metodo-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    transform: scale(1); /* tamaño normal en móvil */
+  }
+}
+
+/* ===== TARJETAS ===== */
+.metodo-card {
+  position: relative;
+  overflow: visible;
+  text-align: left;
+  aspect-ratio: 1150 / 380;
+  min-height: 200px; /* más compacto */
+  z-index: 0;
+}
+
+.metodo-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+  transition: opacity .3s ease;
+}
+
+.metodo-card:hover .metodo-bg {
+  content: url("assets/FondoD_Hover.png");
+}
+
+/* Icono flotante */
+.metodo-icon {
+  position: absolute;
+  top: -22px;
+  left: -18px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Contenido del card */
+.metodo-content {
+  position: relative;
+  z-index: 1;
+  padding: 30px 34px 26px 100px;
+}
+
+/* Título */
+.metodo-content h3 {
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 2vw, 34px);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  background: linear-gradient(to bottom, #3557ff 0%, #001b4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Texto */
+.metodo-content p {
+  font-family: 'Nobel Uno', sans-serif;
+  font-size: clamp(14px, 1.6vw, 20px);
+  color: #073d99;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+
+
+/* ===== BLOQUES TEXTO + VIDEO ===== */
+.bloques{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 90px) 16px;
+  display: grid;
+  gap: clamp(36px, 6vw, 70px);
+}
+
+.bloque {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+}
+
+
+.bloque.reverse .bloque-text{ order: 2; }
+.bloque.reverse .bloque-media{ order: 1; }
+
+.bloque-text {
+  display: flex;            /* mantiene flex para centrar */
+  justify-content: center;  /* centra verticalmente el contenido */
+  align-items: center;      /* centra verticalmente también */
+  max-width: 516px;         /* deja el ancho fijo */
+  height: 100%;             /* para que ocupe toda la altura del bloque */
+  padding-left: 40px;
+}
+
+.bloque-text-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centra los textos y botones dentro del contenedor */
+  gap: 16px;                /* opcional, para separar texto y botones */
+  width: 90%;
+  height: auto;
+}
+.bloque-text h3{
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  font-size: clamp(22px, 3vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 0 0;
+  letter-spacing: 0.04em;
+  background: linear-gradient(to bottom, #3557ff 0%, #001b4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.bloque-text p{
+  font-family: 'Nobel Uno', sans-serif;
+  font-size: clamp(16px, 0.8vw, 24px);
+  color: #073d99;
+  line-height: 1.55;
+  margin: 0 0 0 0;
+}
+/* Video */
+
+.bloque-media {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+}
+
+.bloque-video{
+  width: 80%;
+  height: auto;
+  aspect-ratio: 944 / 720; /* mantiene proporción */
+  border-radius: 24px;
+  display: block;
+}
+/* Botonera */
+.bloque-buttons{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Botón de imagen: Contáctanos */
+.btn-contacta{
+  width: 170px; height: 56px;
+  background-image: url("assets/Contacta.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  border: 0; padding: 0; border-radius: 0;
+}
+.btn-contacta:hover{ background-image: url("assets/Contacta_Hover.png"); }
+
+/* Botón outline creado: Comienza ahora */
+.btn-ghost{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px; height: 56px;
+  padding: 0 20px;
+  border-radius: 16px;
+  border: 2px solid #073d99;
+  color: #073d99;
+  background: transparent;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-ghost:hover{
+  background: rgba(7,61,153,0.06);
+}
+/* Botón de imagen: Comienza ahora */
+.btn-comienza{
+  width: 220px; height: 56px;
+  background-image: url("assets/Comienza.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  border: 0; padding: 0; border-radius: 0;
+}
+.btn-comienza:hover{ background-image: url("assets/Comienza_Hover.png"); }
+/* Botón de imagen: Comienza ahora */
+.btn-comienza2{
+  width: 170px; height: 56px;
+  background-image: url("assets/Comienza2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  border: 0; padding: 0; border-radius: 0;
+}
+.btn-comienza2:hover{ background-image: url("assets/Comienza2_Hover.png"); }
+
+
+
+/* ANIMACIÓN ELEGANTE */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.animado {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ANIMACIÓN tarjeta */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar.animado {
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+
+
+.metodo-grid .metodo-card {
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: opacity, transform;
+}
+
+/* Cuando el observer la active, reproduce la animación 
+   con un delay que inyectamos desde JS en --stagger-delay */
+.metodo-grid .metodo-card.stagger-in {
+  animation: fadeSlideUp 0.9s ease-out forwards;
+  animation-delay: var(--stagger-delay, 0ms);
+}
+
+
+
+.sticky-subscribe-btn {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffff 55%, #d6ecff 100%);
+  color: #001e60;
+  font-weight: bold;
+  border-top: 2px solid #5294ca;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 -2px 18px rgba(0, 123, 255, 0.3);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.sticky-subscribe-btn:hover {
+  background: linear-gradient(to bottom, #d0e9ff 40%, #a2d2ff 100%);
+  color: #003080;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  color: #a0caff;
+}
+.btn.primary {
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff 55%, #d6ecff 100%);
+  color: #001e60;
+  border: 2px solid #5294ca;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn.primary:hover {
+  background: linear-gradient(to bottom, #d0e9ff, #a2d2ff);
+  color: #003080;
+  transform: translateY(-1px);
+}
+.access-btn {
+  display: none;
+  margin-left: 10px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+
+
+il {
+  display: none;
+}
+
+a {
+	background: transparent;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 0%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.slider-benefits-movil {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* (opcional) tamaños móviles a juego */
+@media (max-width: 900px){
+  .btn-contacta,
+  .btn-comienza{ width: 180px; height: 48px; }
+}
+
+
+/* Responsive */
+@media (max-width: 900px){
+  .bloque{ grid-template-columns: 1fr; }
+  .bloque.reverse .bloque-text{ order: 2; }
+  .bloque.reverse .bloque-media{ order: 1; }
+  .btn-contacta{ width: 180px; height: 48px; }
+  .btn-ghost{ min-width: 180px; height: 48px; border-radius: 14px; }
+	
+  .video-frame{
+    width: min(100%, 823px);
+    height: auto;
+    aspect-ratio: 823 / 307;
+  }
+  .img-btn{
+    width: 200px;
+    height: 54px;
+  }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .metodo-card {
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+  .metodo-icon {
+    top: -18px;
+    left: 24px;
+    width: 52px;
+    height: 52px;
+  }
+  .metodo-content {
+    padding: 30px 20px 24px 100px;
+  }
+}
+@media (max-width: 768px) {
+  .metodo-card { aspect-ratio: auto; min-height: 200px; }
+  .metodo-icon { top: -22px; left: 24px; width: 52px; height: 52px; }
+  .metodo-content { padding: 30px 20px 24px 100px; }
+  .promoBanner_close {
+	  position: absolute;
+	  top: 0px;
+	  right: 0px;
+	}
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .metodo-card {
+    aspect-ratio: auto;
+    min-height: 200px;
+  }
+  .metodo-icon {
+    top: -22px;
+    left: 24px;
+    width: 52px;
+    height: 52px;
+  }
+  .metodo-content {
+    padding: 30px 20px 24px 100px;
+  }
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px){
+  .video-frame{
+    width: min(100%, 823px);
+    height: auto;
+    aspect-ratio: 823 / 307;
+  }
+  .img-btn{
+    width: 200px;
+    height: 54px;
+  }
+}
+
+
+/* =================== RESPONSIVO: TABLET Y MÓVIL MEDIANO =================== */
+@media (max-width: 768px) {
+
+  /* Estructura general */
+  .site-header {
+    position: sticky;
+  }
+
+  .nav-container {
+    position: relative;
+    padding: 10px 10px;
+  }
+
+  /* Menú principal oculto y botón hamburguesa visible */
+  .main-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .menu-toggle svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.5;
+  }
+
+  /* Logo más pequeño */
+  .logo {
+    height: 20px;
+  }
+
+  /* Botones más pequeños */
+  .btn-outline,
+  .btn-primary {
+    width: 120px;  /* puedes ajustar a 130px si quieres aún más compacto */
+    height: 33px;
+    max-height: 150px;
+  }
+
+  /* Estilo del botón outline reducido */
+  .btn-outline {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-width: 1.5px;
+  }
+
+  /* Contacto dentro del menú móvil */
+  .mobile-contact {
+    display: block;
+    margin: 16px auto 8px;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Ocultar botón superior "Contáctanos" */
+  .nav-actions .btn-primary {
+    display: none;
+  }
+	
+	  .metodo-grid {
+    grid-template-columns: 1fr; /* se apilan */
+    gap: 20px;
+  }
+}
+
+
+/* =================== RESPONSIVO =================== */
+@media (max-width: 640px){
+.promo-container{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 16px;
+  position: relative; /* permite posicionar la X dentro sin desplazar el contenido */
+}
+
+  .promo-text{
+    text-align: center;
+	padding: 0 10px;
+  }
+
+  .promo-actions{
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* centra el botón horizontalmente */
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+
+.promo-close{
+  position: absolute;    /* sácala del flujo y flótala */
+  top: 8px;
+  right: 6px;
+  z-index: 1000;         /* por encima del contenido del banner */
+}
+  .hero-buttons {
+    flex-direction: column;   /* los pone uno debajo del otro */
+    gap: 2px;                 /* espacio entre ellos */
+  }
+
+  .hero-buttons .btn {
+    width: 160px;             /* más angostos */
+    height: 44px;             /* más bajos */
+    background-size: contain; /* mantiene proporción */
+  }
+}
+html {
+  scroll-behavior: smooth;              /* desplazamiento suave */
+  scroll-padding-top: var(--fixed-top, 80px); /* espacio arriba al saltar */
+}
+
+
+

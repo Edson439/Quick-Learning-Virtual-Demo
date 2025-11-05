@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banner + Menú</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylesNumeros.css" />
+  <link rel="stylesheet" href="stylelogo.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="fonts/nobel/stylesheet.css">
+  <link rel="stylesheet" href="fonts/francy/francy.css">
+  <link rel="stylesheet" href="styleCard.css" />
+  <link rel="stylesheet" href="planes.css">
+  <link rel="stylesheet" href="styleClase.css" />
+  <link rel="stylesheet" href="styles/stylesFooter.css" />
+  <link rel="stylesheet" href="stylesPopup.css" />
+  <link rel="stylesheet" href="whats.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <a id="top"></a>
+	
+	<a href="#precios" class="sticky-subscribe-btn">
+	  Comienza ya
+	</a>
+	<a href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+	   class="whatsapp-float" 
+	   target="_blank" 
+	   aria-label="WhatsApp">
+	  <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp" />
+	</a>
+
+    <!-- BANNER MORADO (arriba) -->
+    <div class="promo-banner" id="promoBanner" role="region" aria-label="Promoción">
+    <div class="promo-container">
+      <p class="promo-text">
+        FLASH SALE: Aprovecha los últimos días de un
+        <strong style="font-weight: 900;">30% de descuento</strong> en todos los cursos
+      </p>
+
+      <div class="promo-actions">
+        <a class="promo-btn"  href="#precios">Aprovecha el descuento</a>
+        <button class="promo-close" id="promoClose" aria-label="Cerrar banner" title="Cerrar">×</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- MENÚ INFERIOR (navbar) -->
+    <header class="site-header">
+    <div class="nav-container">
+      <!-- IZQUIERDA: logo -->
+	<div class="brand">
+	  <a href="#top" aria-label="Ir al inicio">
+		<img class="logo" src="assets/Logo.png" alt="Quick Learning" />
+	  </a>
+	</div>
+
+
+      <!-- CENTRO: links -->
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#empresas">Atención a empresas</a></li>
+        </ul>
+      </nav>
+
+      <!-- DERECHA: botones -->
+      <div class="nav-actions">
+		<a class="btn btn-outline" href="https://koollege.com/quicklearningvirtual/login" target="_blank" rel="noopener noreferrer">
+		  <span class="sr-only">Acceso alumnos</span>
+		</a>
+		<button class="menu-toggle" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false">
+		  <i data-lucide="menu"></i>
+		</button>
+
+        <a class="btn btn-primary mobile-contact"
+		   href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+		   target="_blank" 
+		   rel="noopener noreferrer" 
+		   aria-label="Contáctanos">
+		   <span class="sr-only">Contáctanos por WhatsApp</span>
+		</a>
+      </div>
+		
+		<!-- MENÚ MÓVIL (desplegable) -->
+		<nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil" hidden>
+		  <ul>
+			<li><a href="#metodo">Método</a></li>
+			<li><a href="#caracteristicas">Características</a></li>
+			<li><a href="#precios">Precios</a></li>
+			<li><a href="#empresas">Atención a empresas</a></li>
+			<li>
+			<a class="btn btn-primary" 
+			   href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+			   target="_blank" 
+			   rel="noopener noreferrer" 
+			   aria-label="Contáctanos">
+			   <span class="sr-only">Contáctanos por WhatsApp</span>
+			</a>
+
+
+			</li>
+		  </ul>
+		</nav>
+
+
+		
+    </div>
+  </header>
+    <!-- hero -->
+	<section id="hero" class="hero">
+	<div class="hero-bg" aria-hidden="true">
+		<video
+		  class="hero-bg-video"
+		  autoplay
+		  muted
+		  loop
+		  playsinline
+		  preload="auto"
+		  poster="assets/fondo1.jpg"
+		>
+		  <source src="Videos/Fondo2.mp4" type="video/mp4">
+		  <!-- fallback si el browser no soporta video -->
+		  Tu navegador no soporta video HTML5.
+		</video>
+	  </div>
+	  <div class="hero-inner">
+		<h1 class="hero-title">
+		  La mejor escuela de Inglés en
+		  <span class="subrayado">
+			<span class="subrayado-text">línea</span>
+			<span class="puntero" aria-hidden="true"></span>
+		  </span>
+		</h1>
+
+		<p class="hero-paragraph">
+		  Aprende Inglés a distancia con maestros expertos y un método 100% conversacional.
+		  Únete a una comunidad de más <strong style="font-weight: 900;">de 1 millón de personas</strong> y comienza a hablar Inglés ¡desde tu primer día!
+		</p>
+
+		<div class="hero-buttons">
+		  <!-- Botón 1: Contacto -->
+		  <a class="btn img-btn btn-contacto" 			   href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+			   target="_blank" aria-label="Contáctanos"></a>
+		  <!-- Botón 2: Comienza -->
+		  <a class="btn img-btn btn-comienza" href="#precios" aria-label="Comienza ahora"></a>
+		</div>
+	  </div>
+	</section>
+    <!-- Metodo -->
+	<section id="metodo" class="metodo">
+	  <div class="metodo-header animar">
+		<h2>Descubre el método Quick Learning</h2>
+		<p>Aprende Inglés como aprendiste español: fácil y rápido.</p>
+	  </div>
+
+	  <div class="metodo-grid animar">
+		<!-- Tarjeta 1 -->
+		<div class="metodo-card">
+		  <img class="metodo-bg" src="assets/FondoD.png" alt="">
+		  <img class="metodo-icon" src="assets/Icono_1.png" alt="">
+		  <div class="metodo-content">
+			<h3>Inglés conversacional</h3>
+			<p>Primero te enseñamos a hablar Inglés con una excelente pronunciación y cuando ya lo hablas, entonces te enseñamos a leer y a escribir.</p>
+		  </div>
+		</div>
+
+
+		<!-- Tarjeta 2 -->
+		<div class="metodo-card">
+		  <img class="metodo-bg" src="assets/FondoD.png" alt="">
+		  <img class="metodo-icon" src="assets/Icono_2.png" alt="Ícono clases divertidas" />
+		  <div class="metodo-content">
+			<h3>Clases divertidas y efectivas</h3>
+			<p>Nuestras clases combinan dinámicas interactivas, retos reales y práctica constante para que aprendas fácilmente y disfrutes el proceso.</p>
+		  </div>
+		</div>
+
+		<!-- Tarjeta 3 -->
+		<div class="metodo-card">
+		  <img class="metodo-bg" src="assets/FondoD.png" alt="">
+		  <img class="metodo-icon" src="assets/Icono_3.png" alt="Ícono situaciones reales" />
+		  <div class="metodo-content">
+			<h3>Aprende en situaciones reales</h3>
+			<p>Practica inglés en contextos reales: viajes, trabajo y experiencias cotidianas. Domina el Inglés que realmente usarás todos los días.</p>
+		  </div>
+		</div>
+
+		<!-- Tarjeta 4 -->
+		<div class="metodo-card">
+		  <img class="metodo-bg" src="assets/FondoD.png" alt="">
+		  <img class="metodo-icon" src="assets/Icono_4.png" alt="Ícono clases en línea" />
+		  <div class="metodo-content">
+			<h3>Clases 100% en línea</h3>
+			<p>Las clases son completamente en vivo, y las puedes tomar desde tu celular, tablet o computadora.</p>
+		  </div>
+		</div>
+	  </div>
+	</section>
+    <!--  Videos de Pasos  -->
+	<section class="bloques"  id="caracteristicas">
+	  <!-- Bloque 1: texto izq, video der -->
+	  <div class="bloque animar">
+	    <div class="bloque-text">
+		  <div class="bloque-text-inner"> <!-- NUEVO CONTENEDOR -->
+			<h3>Aprende sin estrés,</h3><h3 style="margin-top: -20px;">desde donde estés.</h3>
+			<p>Toma tus clases en línea en horarios establecidos y organiza tu aprendizaje de forma estructurada, flexible y efectiva.</p>
+			<div class="bloque-buttons">
+			  <a class="btn img-btn btn-contacta" href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+			   target="_blank"></a>
+			  <a class="btn img-btn btn-comienza2" href="#precios"></a>
+			</div>
+		  </div>
+		</div>
+		<div class="bloque-media">
+		  <video class="bloque-video" muted autoplay loop playsinline preload="auto" src="Videos/01.mp4"></video>
+		</div>
+	  </div>
+
+	  <!-- Bloque 2: invertido (video izq, texto der) -->
+	  <div class="bloque reverse animar">
+		<div class="bloque-media">
+		  <video class="bloque-video" muted autoplay loop playsinline preload="auto" src="Videos/02.mp4"></video>
+		</div>
+	    <div class="bloque-text">
+		  <div class="bloque-text-inner"> <!-- NUEVO CONTENEDOR -->
+				  <h3>Practica sin límites.</h3>
+				  <p>Accede a sesiones adicionales ilimitadas con maestros en vivo y una plataforma 24/7 para que practiques cuando y donde quieras.</p>
+				  <div class="bloque-buttons">
+					<a class="btn img-btn btn-contacta" href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" 
+			   target="_blank" aria-label="Contáctanos"></a>
+					<a class="btn img-btn btn-comienza2" href="#precios" aria-label="Comienza ahora"></a>
+				  </div>
+				</div>
+		 </div>	  
+	  </div>
+
+	  <!-- Bloque 3: igual al 1 (texto izq, video der) -->
+	  <div class="bloque animar">
+	    <div class="bloque-text">
+		  <div class="bloque-text-inner"> <!-- NUEVO CONTENEDOR -->
+			  <h3>Plataforma disponible 24/7.</h3>
+			  <p>Mide tu progreso, elige tus horarios y accede a todos los recursos que necesitas en un solo lugar.</p>
+			  <div class="bloque-buttons">
+				<a class="btn img-btn btn-contacta" href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" target="_blank" aria-label="Contáctanos"></a>
+				<a class="btn img-btn btn-comienza2" href="#precios" aria-label="Comienza ahora"></a>
+			  </div>
+			</div>
+		</div>
+		<div class="bloque-media">
+		  <video class="bloque-video" muted autoplay loop playsinline preload="auto" src="Videos/03.mp4"></video>
+		</div>
+	  </div>
+	</section>
+	<!-- Nuemros -->
+	<section class="stats-section animar">
+	  <h2>En Quick Learning Virtual ¡hablas o hablas!</h2>
+
+	  <p>Hablar Inglés desde hoy es posible. Súmate a miles de personas que ya cambiaron su futuro.</p>
+
+	  <div class="stats-grid">
+		  
+		  <div>
+			<strong class="stat" data-target="1000000" data-suffix="+">500000</strong>
+			<span>Alumnos</span>
+		  </div>
+		  <div>
+			<strong class="stat" data-target="1000" data-suffix="+">0</strong>
+			<span>Empresas</span>
+		  </div>
+		  <div>
+			<strong class="stat" data-target="98" data-suffix="%">0</strong>
+			<span>Satisfacción</span>
+		  </div>
+		  <div>
+			<strong class="stat" data-target="650" data-suffix="+">0</strong>
+			<span>Happy Teachers</span>
+		  </div>
+		  
+	  </div>
+	</section>
+	<!-- carrusel de opinioes -->
+	<section class="tst" aria-label="Testimoniales de estudiantes">
+
+	  <button class="tst-arrow tst-prev" aria-label="Anterior">
+		<img src="assets/FlechaI.png" alt="">
+	  </button>
+	  <button class="tst-arrow tst-next" aria-label="Siguiente">
+		<img src="assets/FlechaD.png" alt="">
+	  </button>
+	  <div class="tst-viewport animar">
+		<div class="tst-track" id="tstTrack">
+		  <!-- Mariana -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Mariana">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardM.png" alt="Mariana P.">
+			  <h3 class="tst-name">Mariana P.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">¡Pensé que en línea se sintiera tan real!</h4>
+			  <p class="tst-text">Las clases son súper dinámicas, aprendo todo el tiempo y los maestros me corrigen con paciencia.</p>
+			</div>
+		  </article>
+		  <!-- Carlos (central) -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Carlos">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardC.png" alt="Carlos G.">
+			  <h3 class="tst-name">Carlos G.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Aprendo inglés y me divierto</h4>
+			  <p class="tst-text">Me costaba mucho el inglés pero con Quick Learning Virtual me enganché. Las clases son muy divertidas.</p>
+			</div>
+		  </article>
+		  <!-- Fernanda -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Fernanda">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardF.png" alt="Fernanda">
+			  <h3 class="tst-name">Fernanda</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Flexibilidad total y resultados reales.</h4>
+			  <p class="tst-text">Trabajo todo el día y pensé que sería más difícil, pero la plataforma y el método funcionan a la perfección.</p>
+			</div>
+		  </article>
+		  <!-- Mariana -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Mariana">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardM.png" alt="Mariana P.">
+			  <h3 class="tst-name">Mariana P.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">¡Pensé que en línea se sintiera tan real!</h4>
+			  <p class="tst-text">Las clases son súper dinámicas, aprendo todo el tiempo y los maestros me corrigen con paciencia.</p>
+			</div>
+		  </article>
+		  <!-- Carlos (central) -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Carlos">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardC.png" alt="Carlos G.">
+			  <h3 class="tst-name">Carlos G.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Aprendo inglés y me divierto</h4>
+			  <p class="tst-text">Me costaba mucho el inglés pero con Quick Learning Virtual me enganché. Las clases son muy divertidas.</p>
+			</div>
+		  </article>
+		  <!-- Fernanda -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Fernanda">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardF.png" alt="Fernanda">
+			  <h3 class="tst-name">Fernanda</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Flexibilidad total y resultados reales.</h4>
+			  <p class="tst-text">Trabajo todo el día y pensé que sería más difícil, pero la plataforma y el método funcionan a la perfección.</p>
+			</div>
+		  </article>
+		  <!-- Mariana -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Mariana">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardM.png" alt="Mariana P.">
+			  <h3 class="tst-name">Mariana P.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">¡Pensé que en línea se sintiera tan real!</h4>
+			  <p class="tst-text">Las clases son súper dinámicas, aprendo todo el tiempo y los maestros me corrigen con paciencia.</p>
+			</div>
+		  </article>
+		  <!-- Carlos (central) -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Carlos">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardC.png" alt="Carlos G.">
+			  <h3 class="tst-name">Carlos G.</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Aprendo inglés y me divierto</h4>
+			  <p class="tst-text">Me costaba mucho el inglés pero con Quick Learning Virtual me enganché. Las clases son muy divertidas.</p>
+			</div>
+		  </article>
+		  <!-- Fernanda -->
+		  <article class="tst-card reveal" aria-label="Testimonial de Fernanda">
+			<div class="tst-top">
+			  <img class="tst-avatar" src="assets/CardF.png" alt="Fernanda">
+			  <h3 class="tst-name">Fernanda</h3>
+			  <img class="tst-stars" src="assets/Estrellas.png" alt="5 estrellas">
+			</div>
+			<div class="tst-content">
+			  <h4 class="tst-title">Flexibilidad total y resultados reales.</h4>
+			  <p class="tst-text">Trabajo todo el día y pensé que sería más difícil, pero la plataforma y el método funcionan a la perfección.</p>
+			</div>
+		  </article>
+		</div>
+	  </div>
+	</section>
+	<!-- banner logos -->
+    <section class="ql-logos">
+
+    <!-- Viewport limitado a 1200px con fade en bordes -->
+    <div class="ql-logos__viewport">
+      <div class="ql-logo-carousel-track">
+        <img src="assets/logo1.png" alt="Logo 1" class="ql-carousel-logo">
+        <img src="assets/logo2.png" alt="Logo 2" class="ql-carousel-logo">
+        <img src="assets/logo3.png" alt="Logo 3" class="ql-carousel-logo">
+        <img src="assets/logo4.png" alt="Logo 4" class="ql-carousel-logo">
+        <img src="assets/logo5.png" alt="Logo 5" class="ql-carousel-logo">
+        <img src="assets/logo6.png" alt="Logo 6" class="ql-carousel-logo">
+        <img src="assets/logo7.png" alt="Logo 7" class="ql-carousel-logo">
+        <img src="assets/logo8.png" alt="Logo 8" class="ql-carousel-logo">
+        <img src="assets/logo9.png" alt="Logo 9" class="ql-carousel-logo">
+        <img src="assets/logo10.png" alt="Logo 10" class="ql-carousel-logo">
+      </div>
+    </div>
+  </section>
+	<!-- Precios -->	
+	<section class="qlp-wrap" aria-label="Planes y precios"  id="precios">
+	  <header class="qlp-head">
+		<h2 class="qlp-title">Tu camino al Inglés comienza aquí</h2>
+		<p class="qlp-sub" style="max-width: 420px; font-size: 20px;">Conoce más sobre nuestros cursos y elige el que mejor se adapte a tus necesidades.</p>
+	  </header>
+
+	  <div class="qlp-grid" id="qlpGrid">
+		<!-- ===== CARD 1: SMART (con pestañita al hacer hover) ===== -->
+		<article class="qlp-card"
+		  data-bg-default="assets/fondoP.png"
+		  data-bg-hover="assets/fondoP_Hover.png"
+		  data-hero-default="assets/P-Smart.png"
+		  data-hero-hover="assets/P-Smart_Hover.png"
+		  data-badge="assets/PromocionCor.png">
+
+		  <img class="qlp-card__badge" alt="Promoción" />
+		  <img class="qlp-hero" alt="Plan Smart">
+
+		  <div class="qlp-ribbon">Clases de <b>45 minutos</b> diarios de lunes a viernes</div>
+
+		  <ul class="qlp-list">
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Plataforma Interactiva 24/7</li>
+
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>15 horas de clase grupal</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Certificación <b>TOEFL</b> o <b>TOEIC</b>*</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Constancia digital al terminar cada nivel</li>
+		  </ul>
+
+		  <div class="qlp-cta">
+			<a href="https://koollege.com/quicklearningvirtual/registro" target="_blank" class="qlp-btn" aria-label="Inscríbete ya">
+			  <img class="qlp-btn-img"
+				   src="assets/Inscribete.png"
+				   data-btn-default="assets/Inscribete.png"
+				   data-btn-hover="assets/Inscribete_Hover.png"
+				   alt="Inscríbete ya">
+			</a>
+		  </div>
+		</article>
+
+		<!-- ===== CARD 2: PLUS ===== -->
+		<article class="qlp-card"
+	  data-bg-default="assets/fondoP.png"
+	  data-bg-hover="assets/fondoP_Hover.png"
+	  data-hero-default="assets/P-Plus.png"
+	  data-hero-hover="assets/P-Plus_Hover.png"
+	  data-badge="assets/PromocionCor.png"> <!-- <- aquí -->
+	  <img class="qlp-card__badge" alt="">
+		  <img class="qlp-hero" alt="Plan Plus">
+
+		  <div class="qlp-ribbon">Clases de <b>90 minutos</b> diarios de lunes a viernes, ó 7.5 hrs los sábados</div>
+
+		  <ul class="qlp-list">
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Plataforma Interactiva 24/7</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>30 horas de clase grupal</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Sesiones limitadas con maestros en vivo</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Certificación <b>TOEFL</b> o <b>TOEIC</b>*</li>
+			<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Constancia digital al terminar cada nivel</li>
+		  </ul>
+
+		  <div class="qlp-cta">
+			<a href="https://koollege.com/quicklearningvirtual/registro" target="_blank" class="qlp-btn" aria-label="Inscríbete ya">
+			  <img class="qlp-btn-img"
+				   src="assets/Inscribete.png"
+				   data-btn-default="assets/Inscribete.png"
+				   data-btn-hover="assets/Inscribete_Hover.png"
+				   alt="Inscríbete ya">
+			</a>
+		  </div>
+		</article>
+
+		<!-- ===== CARD 3: 1 a 1 (sin pestañita) ===== -->
+		<article class="qlp-card"
+		  data-bg-default="assets/fondoP.png"
+		  data-bg-hover="assets/fondoP_Hover.png"
+		  data-hero-default="assets/P-1a1.png"
+		  data-hero-hover="assets/P-1a1_Hover.png">
+
+		  <img class="qlp-card__badge" alt="">
+		  <img class="qlp-hero" alt="Plan 1 a 1">
+
+		  <div class="qlp-ribbon">
+			Aprende con un <b>maestro dedicado solo a ti</b>, en los días y horarios que elijas.
+			Avanza a máxima velocidad con atención 100% personalizada; cada clase se adapta a tu nivel, tu ritmo y tus metas.
+		  </div>
+
+		  <div class="qlp-cta">
+			<a href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" target="_blank" class="qlp-btn" aria-label="Contáctanos">
+			  <img class="qlp-btn-img"
+				   src="assets/Contactanos2.png"
+				   data-btn-default="assets/Contactanos2.png"
+				   data-btn-hover="assets/Contactanos2_Hover.png"
+				   alt="Contáctanos">
+			</a>
+		  </div>
+		</article>
+
+		<!-- ===== CARD 4: MAX ===== -->
+	<article class="qlp-card"
+	  data-bg-default="assets/fondoP.png"
+	  data-bg-hover="assets/fondoP_Hover.png"
+	  data-hero-default="assets/P-max.png"
+	  data-hero-hover="assets/P-max_Hover.png"
+	  data-badge="assets/PromocionCor.png"> <!-- <- aquí -->
+	  <img class="qlp-card__badge" alt="">
+	  <img class="qlp-hero" alt="Plan Max">
+
+	  <div class="qlp-ribbon">Clases de <b>180 minutos</b> diarios de lunes a viernes</div>
+
+	  <ul class="qlp-list">
+		<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Plataforma Interactiva 24/7</li>
+		<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>30 horas de clase grupal</li>
+		<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Sesiones limitadas con maestros en vivo</li>
+		<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Certificación <b>TOEFL</b> o <b>TOEIC</b>*</li>
+		<li><i data-lucide="check" style="width: 14px; padding-bottom: 10px;"></i>Constancia digital al terminar cada nivel</li>
+	  </ul>
+
+	  <div class="qlp-cta">
+		<a href="https://koollege.com/quicklearningvirtual/registro" target="_blank" class="qlp-btn" aria-label="Inscríbete ya">
+		  <img class="qlp-btn-img"
+			   src="assets/Inscribete.png"
+			   data-btn-default="assets/Inscribete.png"
+			   data-btn-hover="assets/Inscribete_Hover.png"
+			   alt="Inscríbete ya">
+		</a>
+	  </div>
+	</article>
+	  </div>
+
+	  <div class="qlp-pay">
+		<img src="assets/Pagos.png" alt="Formas de pago aceptadas">
+	  </div>
+	  <div class="qlp-note">
+		*Consulta método y bancos participantes compras a meses sin intereses.
+	  </div>
+	</section>
+	<!-- Clase muestra -->
+	<section class="cta-ql">
+	  <!-- Fondo video -->
+	  <div class="cta-ql__bg" aria-hidden="true">
+		<video
+		  class="cta-ql__video"
+		  autoplay
+		  muted
+		  loop
+		  playsinline
+		  preload="auto"
+		  poster="assets/FondoA.png"
+		>
+		  <source src="Videos/Fondo.mp4" type="video/mp4">
+		  Tu navegador no soporta video HTML5.
+		</video>
+		<!-- degradé sutil para legibilidad -->
+		<span class="cta-ql__overlay"></span>
+	  </div>
+
+	  <div class="cta-ql__inner animar">
+		<h2 class="cta-ql__title">¿Aún tienes dudas? ¡Agenda una clase muestra!</h2>
+		<p class="cta-ql__subtitle">
+		  Envíanos un mensaje solicitando una clase de prueba y un asesor pronto se pondrá en contacto contigo para programarla.
+		</p>
+		<a class="cta-ql__button" href="https://api.whatsapp.com/send/?phone=5215641864150&text=Hola%2C+me+encantar%C3%ADa+recibir+informaci%C3%B3n+de+sus+cursos.&type=phone_number&app_absent=0" target="_blank" aria-label="Solicita una clase muestra">
+		  <span class="sr-only">Solicita una clase muestra</span>
+		</a>
+	  </div>
+	</section>
+	<!-- footer -->	
+	<footer class="footer-ql">
+	  <div class="footer-top">
+		<div class="footer-col logo">
+		  <img src="assets/logo-footer.png" alt="Quick Learning Logo" />
+		  <p>Inglés en QUICK LEARNING,<br>¡hablas o hablas!</p>
+		</div>
+		<div class="footer-col">
+		  <strong>Soporte</strong>
+		  <p><a href="mailto:soporte@quicklearning.com">soporte@quicklearning.com</a></p>
+		</div>
+		<div class="footer-col">
+		  <strong>¿Necesitas ayuda?</strong>
+		  <p><i class="fas fa-phone-alt"></i> 01 80 02 77 70 77</p>
+		  <p><i class="fab fa-whatsapp"></i> 56 41 86 41 50</p>
+		</div>
+	  </div>
+	  <hr />
+	  <div class="footer-bottom">
+		<p>
+		  Copyright©2025. Quick Learning | Derechos Reservados |
+		  <a href="#">Términos y Condiciones</a> |
+		  <a href="#">Aviso de Privacidad</a>
+		</p>
+	  </div>
+	</footer>
+
+	<!-- Popup Promocional -->
+	<div id="promoBanner_overlay" class="promoBanner_overlay" hidden>
+	  <div class="promoBanner_content" role="dialog" aria-modal="true" aria-label="Promoción">
+		<picture>
+		  <!-- Versión para móviles -->
+		  <source srcset="assets/Banners/02.png" media="(max-width: 600px)">
+		  <!-- Imagen principal con escala -->
+		  <img src="assets/Banners/01.png" 
+			   alt="Promoción Quick Learning" 
+			   class="promoBanner_img"
+			   style="transform: scale(0.9); transform-origin: center;">
+		</picture>
+		<button class="promoBanner_close" id="promoBanner_closeBtn" aria-label="Cerrar">×</button>
+	  </div>
+	</div>
+
+
+	<script src="script.js"></script>
+	<script src="scriptNumeros.js"></script>
+	<script src="scriptlogo.js"></script>
+	<script src="scriptCard.js"></script>
+	<script src="planes.js" defer></script>
+	<script src="scriptClase.js"></script>
+	<script src="scripts/scriptFooter.js"></script>
+	<script>
+	(function () {
+	  function formatNumber(num) {
+		if (num >= 1000000) {
+		  return (num / 1000000).toFixed(1).replace(/\.0$/, '') + "M";
+		} else if (num >= 1000) {
+		  return (num / 1000).toFixed(1).replace(/\.0$/, '') + "K";
+		}
+		return num;
+	  }
+
+	  function animateElement(el, endValue, duration, suffix, startValue, stepOverride) {
+		let start = startValue || 0;
+		const totalSteps = duration / 60;
+		const increment = stepOverride || (endValue - start) / totalSteps;
+
+		const update = () => {
+		  start += increment;
+		  if (start >= endValue) {
+			el.textContent = formatNumber(endValue) + suffix;
+			el.dataset.animating = "false";
+		  } else {
+			el.textContent = formatNumber(Math.floor(start)) + suffix;
+			requestAnimationFrame(update);
+		  }
+		};
+
+		if (el.dataset.animating !== "true") {
+		  el.dataset.animating = "true";
+		  requestAnimationFrame(update);
+		}
+	  }
+
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			const el = entry.target;
+			const endValue = parseInt(el.dataset.target);
+			const suffix = el.dataset.suffix || "";
+			const startValue = parseInt(el.dataset.start || "0");
+			const stepOverride = parseInt(el.dataset.step || "0") || undefined;
+			animateElement(el, endValue, 3500, suffix, startValue, stepOverride);
+		  }
+		});
+	  }, {
+		threshold: 0.6
+	  });
+
+	  window.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('.stat').forEach(el => {
+		  el.dataset.animating = "false";
+		  observer.observe(el);
+		});
+	  });
+	})();
+	</script>
+	<script>
+	(function(){
+	const vid = document.querySelector('.hero-bg-video');
+	if (!vid) return;
+
+	// Respeta "prefers-reduced-motion"
+	const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+	const handleMotion = () => {
+	  if (prefersReduced.matches) {
+		vid.pause();
+	  } else {
+		// iOS/autoplay: asegúrate de que esté muteado y playsinline
+		vid.muted = true;
+		vid.playsInline = true;
+		const playPromise = vid.play();
+		if (playPromise && playPromise.catch) playPromise.catch(()=>{/* ignorar */});
+	  }
+	};
+
+	prefersReduced.addEventListener?.('change', handleMotion);
+	handleMotion();
+	})();
+	</script>
+	<script>
+(() => {
+  const overlay = document.getElementById('promoBanner_overlay');
+  const closeBtn = document.getElementById('promoBanner_closeBtn');
+
+  // Si algo no existe, salimos
+  if (!overlay || !closeBtn) return;
+
+  // Funciones abrir/cerrar
+  const openPopup = () => {
+    overlay.removeAttribute('hidden');
+    overlay.classList.add('is-open');
+    document.body.classList.add('banner-activo');
+  };
+
+  const closePopup = () => {
+    overlay.classList.remove('is-open');
+    document.body.classList.remove('banner-activo');
+    // opcional: ocultarlo del árbol de accesibilidad
+    overlay.setAttribute('hidden', '');
+  };
+
+  // Abrir al cargar (puedes cambiar el delay)
+  window.addEventListener('load', () => {
+    // para evitar que un error anterior “mate” este código,
+    // abrimos con un pequeño timeout
+    setTimeout(openPopup, 400);
+  });
+
+  // Cerrar con la X
+  closeBtn.addEventListener('click', closePopup);
+
+  // Cerrar haciendo click fuera del contenido
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup();
+  });
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closePopup();
+    }
+  });
+})();
+</script>
+	<script>  
+	
+let currentIndex = 0;
+
+const cards = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.getElementById('prev-testimonial');
+const nextBtn = document.getElementById('next-testimonial');
+
+  // Beneficios aniamcion
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("animado");
+      } else {
+        entrada.target.classList.remove("animado");
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll(".animar").forEach((el) => observador.observe(el));
+		
+	  // Animar Personaje	
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animado");
+      } else {
+        entry.target.classList.remove("animado");
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  document.querySelectorAll(".animar, .animar-personaje").forEach(el => observer.observe(el));
+	// Animar Precio		
+  const precios = document.querySelectorAll(".animar-precio");
+
+  const observerPrecios = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        const delay = entrada.target.dataset.delay || "0s";
+        entrada.target.style.animationDelay = delay;
+        entrada.target.classList.add("animado");
+      } else {
+        entrada.target.classList.remove("animado");
+      }
+    });
+  }, { threshold: 0.8 });
+
+  precios.forEach(card => observerPrecios.observe(card));
+	</script>
+	<script>
+// --- Stagger para las tarjetas del MÉTODO ---
+(() => {
+  const grid = document.querySelector('.metodo-grid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.metodo-card'));
+  if (!cards.length) return;
+
+  const STAGGER = 250; // ms entre cada tarjeta (ajústalo a gusto)
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Activa una por una con delay (0, 150, 300, 450…)
+        cards.forEach((card, i) => {
+          card.style.setProperty('--stagger-delay', `${i * STAGGER}ms`);
+          card.classList.add('stagger-in');
+        });
+      } else {
+        // Si quieres que NO se repita al volver a entrar, comenta este bloque
+        cards.forEach(card => {
+          card.classList.remove('stagger-in');
+          card.style.removeProperty('--stagger-delay');
+        });
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(grid);
+})();
+</script>
+
+
+</body>
+</html>

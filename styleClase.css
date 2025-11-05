@@ -1,0 +1,175 @@
+/* ===== controles de encuadre del video ===== */
+:root{
+  /* 50% 50% = centrado; sube Y para “bajar” lo visible y viceversa */
+  --cta-focus-x: 50%;
+  --cta-focus-y: 45%;
+  /* 1 = sin zoom. Sube si quieres acercar */
+  --cta-scale: 1.00;
+}
+
+/* sección */
+.cta-ql{
+  position: relative;
+  min-height: clamp(360px, 42vw, 560px);
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 4vw, 56px) 16px;
+  color: #fff;
+  overflow: hidden; /* oculta el exceso del video */
+}
+
+/* capa de vídeo full-bleed */
+.cta-ql__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cta-ql__video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* llena sin deformar */
+  object-position: var(--cta-focus-x) var(--cta-focus-y);
+  transform: scale(var(--cta-scale));
+}
+
+/* overlay para contraste (muy sutil) */
+.cta-ql__overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.18) 100%);
+}
+
+/* contenido encima */
+.cta-ql__inner{
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 100%);
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* (tu mismo estilo anterior para título, subtítulo y botón) */
+.cta-ql__title{
+  margin: 0 0 clamp(12px, 2.4vw, 18px);
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: .04em;
+  font-size: clamp(26px, 4.6vw, 56px);
+  background: linear-gradient(180deg, #ffffff 0%, #e9f3ff 70%, #d6eaff 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+}
+.cta-ql__subtitle{
+  margin: 0 auto clamp(18px, 3.2vw, 30px);
+  font-family: 'Nobel Uno', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.35;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: rgba(255,255,255,.95);
+}
+.cta-ql__button{
+  display:inline-block;
+  width: clamp(260px, 36vw, 420px);
+  aspect-ratio: 1058 / 180;
+  background: url("assets/ClaseMuestra.png") center/contain no-repeat;
+  filter: drop-shadow(0 8px 18px rgba(16,74,196,.35));
+  transition: transform .16s ease, filter .16s ease, background-image .08s linear;
+  outline: none;
+}
+.cta-ql__button:hover,
+.cta-ql__button:focus-visible{
+  background-image: url("assets/ClaseMuestra_Hover.png");
+  transform: translateY(-1px);
+  filter: drop-shadow(0 10px 22px rgba(16,74,196,.45));
+}
+
+/* accesibilidad */
+.sr-only{
+  position:absolute!important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* ===== Reset mínimo para evitar sorpresas ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ===== Sección con fondo largo ===== */
+.cta-ql{
+  position: relative;
+  /* Tu arte 2328×529: que siempre llene y recorte elegante */
+  background: url("assets/FondoA.png") center / cover no-repeat;
+  /* Altura mínima cómoda (se ajusta con viewport) */
+  min-height: clamp(360px, 42vw, 560px);
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 4vw, 56px) 16px;
+  color: #fff;
+
+}
+
+/* Contenedor centrado y máximo ancho */
+.cta-ql__inner{
+  width: min(1200px, 100%);
+  text-align: center;
+  margin-inline: auto;
+	
+}
+
+/* Título con look “blanco brillante” (degradado suave + sombra) */
+.cta-ql__title{
+  margin: 0 0 clamp(12px, 2.4vw, 18px);
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  font-size: clamp(26px, 4.6vw, 56px);
+  background: linear-gradient(180deg, #ffffff 0%, #e9f3ff 70%, #d6eaff 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* Subtítulo */
+.cta-ql__subtitle{
+  margin: 0 0 clamp(18px, 3.2vw, 30px);
+  font-family: 'Nobel Uno', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.35;
+  font-size: clamp(16px, 2.4vw, 24px);
+  color: rgba(255,255,255,.95);
+  max-width: 720px;
+	  margin: 0 auto clamp(18px, 3.2vw, 30px);
+}
+
+/* Botón como imagen (normal + hover) */
+.cta-ql__button{
+  display: inline-block;
+  width: clamp(260px, 36vw, 420px);
+  aspect-ratio: 1058 / 180;            /* mantiene proporción del PNG */
+  background: url("assets/ClaseMuestra.png") center / contain no-repeat;
+  filter: drop-shadow(0 8px 18px rgba(16, 74, 196, .35));
+  transition: transform .16s ease, filter .16s ease, background-image .08s linear;
+  outline: none;
+}
+.cta-ql__button:hover,
+.cta-ql__button:focus-visible{
+  background-image: url("assets/ClaseMuestra_Hover.png");
+  transform: translateY(-1px);
+  filter: drop-shadow(0 10px 22px rgba(16, 74, 196, .45));
+}
+
+/* Accesibilidad (texto oculto visualmente) */
+.sr-only{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Pequeños ajustes móviles */
+@media (max-width: 480px){
+  .cta-ql__subtitle{ line-height: 1.4; }
+}

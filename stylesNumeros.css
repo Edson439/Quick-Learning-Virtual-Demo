@@ -1,0 +1,160 @@
+
+/* -------- Testimoniales -------- */
+.stats-section {
+  text-align: center;
+  color: white;
+  margin: 150px 0;
+}
+.stats-section h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  background: linear-gradient(to bottom, #001b4e 0%, #4961fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.stats-section p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: #073d99;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas grandes */
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 0;
+  margin-bottom: 40px;
+  font-family: "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+.stats-grid > div {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.stats-grid strong {
+  font-size: 54px;
+  font-weight: 900;
+  background: linear-gradient(to bottom, #001b4e 0%, #4961fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72.5%;
+  z-index: -1;
+}
+.stats-grid span {
+  font-size: 20px;
+  color: #073d99;
+}
+/* Líneas entre bloques en desktop */
+.stats-grid > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 2px;
+  background-color: #7fc7ff;
+}
+
+
+/* ANIMACIÓN ELEGANTE */
+@keyframes fadeInUp {
+  0% {
+		opacity: 0;
+		transform: translateY(40px);
+	  }
+	  100% {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+
+@media (max-width: 800px) {
+  body {
+	  padding-top: 68px;
+	}
+
+  .stats-grid strong {
+	  font-size: 54px;
+	}
+
+  .stats-grid span {
+	  font-size: 16px;
+	}
+}
+@media (max-width: 768px) {
+	.stats-grid strong {
+	  font-size: 30px;
+	}
+	.stats-grid span {
+	  font-size: 16px;
+	}
+}
+
+@media (max-width: 667px) {	  
+	
+  .stats-section h2 {
+	  font-size: 1.6rem;
+	  
+	}
+	.stats-section p {
+	  font-size: 14px;
+	}
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid > div::after,
+  .stats-grid > div::before {
+    content: "";
+    position: absolute;
+    background-color: #7fc7ff;
+  }
+
+  /* Línea vertical derecha para bloque 1 y 3 */
+  .stats-grid > div:nth-child(1)::after,
+  .stats-grid > div:nth-child(3)::after {
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 2px;
+  }
+
+  /* Línea horizontal inferior para bloque 1 y 2 */
+  .stats-grid > div:nth-child(1)::before,
+  .stats-grid > div:nth-child(2)::before {
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+  }
+
+  /* Elimina otras líneas no deseadas */
+  .stats-grid > div:nth-child(2)::after,
+  .stats-grid > div:nth-child(4)::after,
+  .stats-grid > div:nth-child(3)::before,
+  .stats-grid > div:nth-child(4)::before {
+    display: none;
+  }
+	.stats-grid strong {
+	  font-size: 30px;
+	}
+	.stats-grid span {
+	  font-size: 16px;
+	}
+}

@@ -1,0 +1,170 @@
+
+.sticky-subscribe-btn {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffff 55%, #d6ecff 100%);
+  color: #001e60;
+  font-weight: bold;
+  border-top: 2px solid #5294ca;
+  padding: 16px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 -2px 18px rgba(0, 123, 255, 0.3);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.sticky-subscribe-btn:hover {
+  background: linear-gradient(to bottom, #d0e9ff 40%, #a2d2ff 100%);
+  color: #003080;
+}
+
+.btn.primary {
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff 55%, #d6ecff 100%);
+  color: #001e60;
+  border: 2px solid #5294ca;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn.primary:hover {
+  background: linear-gradient(to bottom, #d0e9ff, #a2d2ff);
+  color: #003080;
+  transform: translateY(-1px);
+}
+.access-btn {
+  display: none;
+  margin-left: 10px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+
+
+il {
+  display: none;
+}
+
+a {
+	background: transparent;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 0%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.slider-benefits-movil {
+  display: none;
+}
+
+
+@media (max-width: 800px) {
+
+  .sticky-subscribe-btn {
+		display: block;
+	 }
+  .sticky-subscribe-btn:hover {
+	  background: linear-gradient(to bottom, #d0e9ff 40%, #a2d2ff 100%);
+	  color: #003080;
+	}
+
+	
+.whatsapp-float {
+  bottom: 30px;
+  right: -30px;
+}
+  .whatsapp-float img {
+  width: 50%;
+}
+	
+  .access-btn {
+    display: inline-flex;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    height: 36px;
+    line-height: 1;
+    border: 1.5px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .access-btn:hover {
+    background-color: white;
+    color: #002050;
+  }
+
+}
+@media (max-width: 768px) {
+  
+  .icono {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .icono img {
+    height: 60px;
+  }
+ 
+  .slider-benefits-movil {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 20px;
+}
+  .slider-benefits-movil .arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+  .slider-benefits-movil .arrow img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+}

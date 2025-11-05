@@ -1,0 +1,71 @@
+/* ===== Banner completo con degradado en toda la franja ===== */
+.ql-logos{
+  position: relative;
+  overflow: hidden;
+  color:#fff;
+  background:
+    radial-gradient(1200px 60% at 50% 100%, rgba(117,171,255,.18) 0%, rgba(117,171,255,0) 70%),
+    linear-gradient(180deg, #2a2a72 0%, #10337f 46%, #0b54c6 100%);
+  padding: clamp(14px, 2vw, 18px) 0 clamp(24px, 4vw, 24px);
+}
+
+/* ===== Título con degradado de texto ===== */
+.ql-logos__title{
+  margin: 0 auto clamp(10px, 1vw, 20px);
+  padding: 0 16px;
+  text-align: center;
+  font-family: 'Francy', sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  font-size: clamp(18px, 2.4vw, 30px);
+  background: linear-gradient(180deg, #FFFFFF 0%, #DCEBFF 55%, #A4C6FF 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: 0 1px 1px rgba(255,255,255,.25);
+  letter-spacing: 0.04em;
+}
+
+
+/* ===== Viewport: ancho máx 1200, centrado + fade en extremos ===== */
+.ql-logos__viewport{
+  position: relative;
+  max-width: 1200px;     /* límite de área visible */
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+
+/* ===== Track que se desplaza ===== */
+.ql-logo-carousel-track{
+  display: inline-block;
+  animation: ql-scroll-logos 30s linear infinite;
+  will-change: transform;
+}
+
+/* ===== Logos ===== */
+.ql-carousel-logo{
+  height: clamp(36px, 5.2vw, 50px);
+  margin: 0 clamp(24px, 4vw, 48px);
+  vertical-align: middle;
+  filter: grayscale(100%) brightness(200%);
+  opacity: .8;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.ql-carousel-logo:hover{
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ===== Animación ===== */
+@keyframes ql-scroll-logos{
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-50%); } /* el JS duplica el contenido para loop perfecto */
+}
+
+/* ===== Responsive pequenos ajustes ===== */
+@media (max-width: 768px){
+  .ql-logos{ padding-bottom: clamp(18px,6vw,22px); }
+  .ql-carousel-logo{ margin: 0 clamp(18px, 5vw, 28px); }
+}
